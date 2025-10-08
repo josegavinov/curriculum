@@ -1,0 +1,211 @@
+/* ...existing code... */
+/* Paleta */
+:root{
+  --dark: #0C090D;
+  --light: #C5C5C5;
+  --accent: #7A5C58;
+  --bg: #ffffff;
+  --box-bg: #F7F5F4;
+}
+
+/* Reset básico */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--dark);
+  font-family:"Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height:1.45;
+}
+
+/* Clases .outfit-<uniquifier> según tu patrón */
+.outfit-title {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: var(--dark);
+}
+
+.outfit-heading {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--dark);
+}
+
+.outfit-subtitle {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--accent);
+}
+
+.outfit-body {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--dark);
+}
+
+.outfit-muted {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--light);
+}
+
+/* Tipografía aplicada a elementos comunes */
+h1,h2,h3{margin:0 0 .5rem}
+h1{font-size:2rem}
+h2{font-size:1.5rem}
+
+/* Navegación */
+nav ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  gap:1rem;
+}
+nav a{
+  text-decoration:none;
+  color:var(--dark);
+  padding:.35rem .6rem;
+  border-radius:6px;
+}
+nav a:hover{
+  background:var(--box-bg);
+  color:var(--accent);
+}
+
+/* Contenedores y cajas con color */
+header, main, footer, section{
+  padding:1rem;
+}
+.card{
+  background:var(--box-bg);
+  border-radius:8px;
+  padding:1rem;
+  box-shadow:0 1px 0 rgba(12,9,13,0.03);
+  margin-bottom:1rem;
+}
+
+/* Blockquote estilo */
+blockquote{
+  border-left:4px solid var(--accent);
+  margin:0;
+  padding:.5rem 1rem;
+  background:linear-gradient(90deg, rgba(122,92,88,0.03), transparent);
+  color:var(--dark);
+}
+
+/* Tablas sin bordes visibles pero legibles */
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:transparent;
+}
+thead th{
+  text-align:left;
+  padding:.5rem;
+  background:var(--box-bg);
+  color:var(--accent);
+  font-weight:600;
+}
+tbody td{
+  padding:.5rem;
+  color:var(--dark);
+}
+
+/* Formularios: inputs, textarea, select, botones */
+input[type="text"],
+select,
+textarea{
+  width:100%;
+  padding:.5rem;
+  border:1px solid rgba(12,9,13,0.08);
+  border-radius:6px;
+  background:#fff;
+  color:var(--dark);
+  font-family:inherit;
+  font-size:1rem;
+}
+input[type="text"]:focus,
+select:focus,
+textarea:focus{
+  outline:2px solid rgba(122,92,88,0.12);
+  box-shadow:0 0 0 3px rgba(122,92,88,0.06);
+}
+
+label{
+  display:block;
+  margin: .5rem 0 .25rem;
+  color:var(--dark);
+  font-weight:600;
+}
+
+button[type="submit"]{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:.6rem 1rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+}
+button[type="submit"]:hover{
+  opacity:.95;
+}
+
+/* Estilos utilitarios */
+.center{max-width:1100px;margin:0 auto}
+.kv-muted{color:var(--light);font-size:.95rem}
+
+#photo {
+  width: vw;
+  height: vh;
+  display: block;
+  max-width: 100%;
+}
+
+.subtitle {
+  color: rgb(151 156 165 / 0.89);
+  text-transform: uppercase;
+}
+
+/* eliminar viñeta en la ul hija inmediata de nav */
+nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* p descendiente dentro de footer: alineado a la derecha e itálica */
+footer p {
+  text-align: right;
+  font-style: italic;
+}
+
+section {
+
+    /* borde de grosor 0.2 en puntos, estilo sólido y color hexadecimal #cedddd  */
+    border: 0.2pt solid #cedddd;
+
+    /* margen (espacio externo) superior, derecho, abajo e izquierda */
+    margin: 4px 2px 8px 2px;
+
+    /* relleno (espacio interno) de
+    1.5% en la parte superior e inferior y
+    0.8% a los lados derecho e izquierdo. */
+
+    padding: 1.5% 0.8%;
+
+    /* Margen inferior ajustado */
+    margin-bottom: 1.2rem;
+
+}
