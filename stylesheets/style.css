@@ -179,10 +179,26 @@ button[type="submit"]:hover{
 }
 
 /* eliminar viñeta en la ul hija inmediata de nav */
-nav > ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+nav ul {
+    /* Reset de lista que ya tenías */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    /* 1. Activar el modelo de diseño flexbox */
+    display: flex;
+
+    /* 3. Organizar los elementos hijos en una fila horizontal (valor por defecto, explícito por la solicitud) */
+    flex-direction: row;
+
+    /* 2. Distribuir el espacio equitativamente entre los elementos (a lo largo del eje principal) */
+    justify-content: space-around; /* Distribuye el espacio sobrante alrededor de los ítems */
+
+    /* 4. Alinear verticalmente los elementos en el centro (a lo largo del eje transversal) */
+    align-items: center;
+
+    /* 5. Establecer un espacio uniforme de 1rem entre cada par de elementos (usando la propiedad 'gap' moderna) */
+    gap: 1rem;
 }
 
 /* p descendiente dentro de footer: alineado a la derecha e itálica */
@@ -191,7 +207,7 @@ footer p {
   font-style: italic;
 }
 
-section {
+section  {
 
     /* borde de grosor 0.2 en puntos, estilo sólido y color hexadecimal #cedddd  */
     border: 0.2pt solid #cedddd;
@@ -208,4 +224,48 @@ section {
     /* Margen inferior ajustado */
     margin-bottom: 1.2rem;
 
+    
 }
+section > form {
+
+    /* Activa el modelo de diseño basado en cuadrícula */
+    display: grid;
+
+    /* Define una sola columna que ocupa todo el ancho disponible del contenedor */
+    grid-template-columns: 1fr;
+
+    /* Establece un espacio vertical uniforme de 1rem entre filas */
+    row-gap: 1rem;
+
+    /* Establece un espacio horizontal uniforme de 1rem entre columnas */
+    column-gap: 1rem;
+
+}
+
+
+#testimonios {
+
+     /* Activa el modelo Flexbox */
+     display: flex;
+
+     /* Permite que los hijos pasen a la siguiente línea si no caben */
+     flex-wrap: wrap;
+
+     /* Espaciado uniforme entre filas y columnas */
+     gap: 1rem;
+
+}
+#testimonios > h2 {
+
+     /* Hace que el subtítulo ocupe el 100% del ancho del contenedor */
+     flex: 0 0 100%;
+     
+
+}
+#testimonios > blockquote {
+
+     /* Distribuye equitativamente los artículos en tres columnas */
+     flex: 1 1 calc(33.333% - 1rem);
+
+}
+
