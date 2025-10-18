@@ -1,4 +1,4 @@
-/* ...existing code... */
+
 /* Paleta */
 :root{
   --dark: #0C090D;
@@ -86,22 +86,29 @@ nav a:hover{
 /* Contenedores y cajas con color */
 header, main, footer, section{
   padding:1rem;
+  border: none;
+  text-align:center;
+
 }
 .card{
   background:var(--box-bg);
-  border-radius:8px;
+  border: none;
   padding:1rem;
-  box-shadow:0 1px 0 rgba(12,9,13,0.03);
+
   margin-bottom:1rem;
 }
-
+ul, ol {
+  list-style-position: inside;
+  padding-left: 0.5rem;
+}
 /* Blockquote estilo */
 blockquote{
   border-left:4px solid var(--accent);
   margin:0;
-  padding:.5rem 1rem;
-  background:linear-gradient(90deg, rgba(122,92,88,0.03), transparent);
+  padding:0;
+  background:linear-gradient( rgba(122,92,88,0.03));
   color:var(--dark);
+  align-self: flex-end;
 }
 
 /* Tablas sin bordes visibles pero legibles */
@@ -111,7 +118,7 @@ table{
   background:transparent;
 }
 thead th{
-  text-align:left;
+  text-align:center;
   padding:.5rem;
   background:var(--box-bg);
   color:var(--accent);
@@ -176,6 +183,7 @@ button[type="submit"]:hover{
 .subtitle {
   color: rgb(151 156 165 / 0.89);
   text-transform: uppercase;
+  border: none;
 }
 
 /* eliminar viñeta en la ul hija inmediata de nav */
@@ -210,7 +218,7 @@ footer p {
 section  {
 
     /* borde de grosor 0.2 en puntos, estilo sólido y color hexadecimal #cedddd  */
-    border: 0.2pt solid #cedddd;
+
 
     /* margen (espacio externo) superior, derecho, abajo e izquierda */
     margin: 4px 2px 8px 2px;
@@ -228,17 +236,11 @@ section  {
 }
 section > form {
 
-    /* Activa el modelo de diseño basado en cuadrícula */
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
 
-    /* Define una sola columna que ocupa todo el ancho disponible del contenedor */
-    grid-template-columns: 1fr;
-
-    /* Establece un espacio vertical uniforme de 1rem entre filas */
-    row-gap: 1rem;
-
-    /* Establece un espacio horizontal uniforme de 1rem entre columnas */
-    column-gap: 1rem;
 
 }
 
@@ -264,8 +266,24 @@ section > form {
 }
 #testimonios > blockquote {
 
-     /* Distribuye equitativamente los artículos en tres columnas */
-     flex: 1 1 calc(33.333% - 1rem);
-
+  flex-grow: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch; 
+  min-height: 8rem;
+  box-sizing: border-box;
 }
 
+#photo {
+  /* tamaño tipo carnet: 3.5cm x 4.5cm */
+  width: 4.5cm;
+  height: 5.5cm;
+  object-fit: cover;    /* recorta y rellena el área manteniendo el encuadre */
+  display: block;
+  margin: 0.5rem auto;  /* centra horizontalmente */
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(12,9,13,0.08);
+  border: 1px solid rgba(12,9,13,0.06);
+}
